@@ -22,7 +22,4 @@
     names.forEach(item=>{
         console.log(item);
     })
-
-
-
 })();
