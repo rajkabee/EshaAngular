@@ -6,8 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my_first_angular_project';
+  title:string = 'Angular Application';
+  username:string = "USERNAME";
+  message:string = 'welcome';
+  
+  changeUsername(value:string):void {
+    this.username=value;
+  }
 
+  handleChildEvent($event:string){
+    this.message=$event;
+  }
+  changeEvent($event:Event){
+    this.username= ($event.target as HTMLTextAreaElement).value;
+  }
 
 
 

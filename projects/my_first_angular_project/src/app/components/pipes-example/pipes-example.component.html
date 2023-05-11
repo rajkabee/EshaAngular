@@ -1,0 +1,42 @@
+<p>pipes-example works!</p>
+<h2>{{ name }}</h2>
+<h2>{{ name | lowercase}}</h2>
+<h2>{{ name | uppercase}}</h2>
+<h2>{{ name | slice:5:10}}</h2>
+<h2>{{ person }}</h2>
+<h2>{{ person | json}}</h2>
+
+<h2>{{ 5.687 }}</h2>
+<h2>{{ 5.687 | number:'1.2-2'}}</h2>
+<h2>{{ 5.687 | number:'3.3-5'}}</h2>
+<h2>{{ 5.687 | number:'3.1-2'}}</h2>
+
+<h2>{{0.25 | percent}}</h2>
+
+<h2>{{ 0.25 | currency }}</h2>
+<h2>{{ 0.25 | currency:'NPR'}}</h2>
+<h2>{{ 0.25 | currency:'INR'}}</h2>
+<h2>{{ 0.25 | currency:'GBP'}}</h2>
+<h2>{{ 0.25 | currency:'EUR':'code'}}</h2>
+
+
+<h2>{{ date }}</h2>
+<h2>{{ date | date}}</h2>
+<h2>{{ date | date:'shortDate'}}</h2>
+<h2>{{ date | date:'shortTime'}}</h2>
+<h2>{{ date | date:'mediumDate'|uppercase}}</h2>
+
+
+<h1>Filtering</h1>
+<input type="text" [(ngModel)]="filteredStatus">
+
+<!-- <h2>{{servers | customPipe: filteredStatus | json}}</h2> -->
+<ul>
+    <li *ngFor="let server of servers | customPipe:filteredStatus" [ngClass]="{
+        'online':server.status==='stable', 
+        'offline':server.status==='offline'
+    }">
+    {{server.name}}
+
+    </li>
+</ul>
