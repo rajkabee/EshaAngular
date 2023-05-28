@@ -19,6 +19,7 @@ import { Consumer2Component } from './components/consumer2/consumer2.component';
 import { CoursesService } from './services/courses.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './components/products/products.component';
+import { PostComponent } from './components/post/post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { ProductsComponent } from './components/products/products.component';
     CustomPipePipe,
     Consumer1Component,
     Consumer2Component,
-    ProductsComponent
+    ProductsComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

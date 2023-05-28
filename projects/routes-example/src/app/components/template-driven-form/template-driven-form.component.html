@@ -1,0 +1,14 @@
+<p>Template Driven Form</p>
+<h3>Name: {{ namefield }}</h3>
+<h3>Address: {{ f.value.address}}</h3>
+<h3>Email: {{ f.value.email}}</h3>
+<h3>Contact: {{ f.value.contact}}</h3>
+<form action="#">
+    <input type="text" name="name"  placeholder="Name" [(ngModel)]="namefield">
+</form>
+<form #f="ngForm" (change)="changed(f)">
+    <input type="text" name="address" placeholder="Address" ngModel ><br>
+    <input type="text" name="email" placeholder="Email" ngModel><br>
+    <input type="text" name="contact" placeholder="Contact" ngModel><br>
+
+</form>

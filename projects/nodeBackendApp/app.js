@@ -1,6 +1,8 @@
 const express = require('express');
 const productRoute = require('./api/routes/products');
-const orderRoute = require('./api/routes/orders');
+const orderRoute = require('./api/routes/orders'); 
+const authenticateRoute = require('./api/routes/authenticate'); 
+const authorizeRoute = require('./api/routes/authorize'); 
 const allowedOrigins = ['http://localhost:4200'];
 const cors = require('cors');
 const app = express();
@@ -22,5 +24,7 @@ app.use(cors({
   }));
 app.use('/products', productRoute);
 app.use('/orders', orderRoute);
-
+app.use('/authenticate', authenticateRoute);
+app.use('/authorize', authorizeRoute);
+app.use(express.json());
 module.exports=app;

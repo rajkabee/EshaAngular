@@ -1,0 +1,34 @@
+<p>model-driven-form works!</p>
+<form [formGroup]="myFormModel" >
+<!-- (ngSubmit)="citySubmit()"> -->
+   <label for="">City: </label> <input type="text" placeholder="City" formControlName="city" ><br>
+   <div class="text-danger font-weight-bold" *ngIf="myFormModel.get('city').touched && myFormModel.get('city').invalid">
+     <div *ngIf="myFormModel.get('city').errors?.['required']">City is required!</div>
+     <div *ngIf="myFormModel.get('city').errors?.['minlength']">City must have at least 3 characters!</div>
+     <div *ngIf="myFormModel.get('city').errors?.['maxlength']">City must have less than 12 characters!</div>
+     <div *ngIf="myFormModel.get('city').errors?.['pattern']">
+      City name cant have digits! 
+      <button class="btn btn-warning text-white btn-small m-1" (click)="ignoreError()">ignore</button>
+     </div>
+     
+   </div>
+    <label for="">Ciy Code: </label><input type="number" formControlName="cityCode"><br>
+    <input type="submit" value="submit">
+</form>
+
+
+
+
+
+
+<h1>Product Form</h1>
+<form [formGroup]="productForm" (ngSubmit)="submitted()">
+   <label for="">Name: </label> <input type="text" formControlName="name"><br>
+    <label for="">Description:</label><input type="text" formControlName="description"><br>
+    <label for="">Price:</label>
+    <div formGroupName="price">
+      <label for="">MRP:</label>  <input type="text" formControlName="mrp"><br>
+       <label for="">Discount</label> <input type="text" formControlName="discount"><br>
+    </div>
+    <input type="submit" value="submit">
+</form> 
