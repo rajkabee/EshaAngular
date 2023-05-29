@@ -1,11 +1,16 @@
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
-
+const allowedOrigins = ['http://localhost:8081'];
 const app = express();
 
-app.use(cors());
+//app.use(cors());
 
+app.use(cors({
+      origin:allowedOrigins,
+      credentials:true,   
+  
+  }));
 // parse requests of content-type - application/json
 app.use(express.json());
 
