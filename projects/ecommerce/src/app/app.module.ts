@@ -18,6 +18,9 @@ import { NewArrivalComponent } from './components/new-arrival/new-arrival.compon
 import { VendorsComponent } from './components/vendors/vendors.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+import { CartStatusComponent } from './components/cart-status/cart-status.component';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -31,14 +34,16 @@ import { FooterComponent } from './components/footer/footer.component';
      SubscribeComponent,
      NewArrivalComponent,
      VendorsComponent,
-     FooterComponent
+     FooterComponent,
+     CartDetailsComponent,
+     CartStatusComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

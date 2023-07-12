@@ -1,0 +1,27 @@
+
+    
+    <div class="btn-group">
+        <button type="button" class="btn border">
+            <span class="fas fa-shopping-cart text-primary "></span>
+            <span class="badge">{{totalNoOfItems}}</span>
+            <span class="badge">Price: {{totalPrice}}</span>
+        </button>
+        <button type="button" class="btn border dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <div *ngFor="let item of items"  class="dropdown-item row align-items-start">
+            
+              <img class="col float-start rounded float" src="{{item.imageUrl}}" alt="book">
+           
+              <div class="col border text-wrap float"><p>{{item.name}} X {{item.quantity}}</p></div>
+              <div class="col float">{{item.unitPrice*item.quantity}}</div>
+            
+          </div>
+        <div class="dropdown-item">
+            <h3>Total</h3>
+        </div>
+        </div>
+      </div>
+    
+
