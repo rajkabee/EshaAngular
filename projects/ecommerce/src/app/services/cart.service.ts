@@ -47,6 +47,24 @@ export class CartService{
     this.totalPrice.next(tPrice);
     this.totalNoOfItems.next(tItems);
   }
+  reduceQuantity(id:number){
+    this.items.forEach(item=>{
+      if(item.id==id && item.quantity>1){
+        item.quantity--;
+      }
+      else if(item.id==id && item.quantity==1){
+        this.items = this.items.filter(obj=>{return obj !== item;});
+      }
+    });
+  }
+  increaseQuantity(id:number){
+    this.items.forEach(item=>{
+      if(item.id==id && item.quantity>1){
+        item.quantity++;
+      }
+    });
+  }
+  
 
 
 }
