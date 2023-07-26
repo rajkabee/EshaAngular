@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-15-jwt-auth": {
+    "angular-oauth": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-15-jwt-auth",
+            "outputPath": "dist/angular-oauth",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -24,7 +24,8 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
+            "styles": [ 
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -60,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-15-jwt-auth:build:production"
+              "browserTarget": "angular-oauth:build:production"
             },
             "development": {
-              "browserTarget": "angular-15-jwt-auth:build:development"
+              "browserTarget": "angular-oauth:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-15-jwt-auth:build"
+            "browserTarget": "angular-oauth:build"
           }
         },
         "test": {
@@ -89,14 +90,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "src/assets/lib/easing/easing.min.js",
-              "src/assets/lib/owlcarousel/owl.carousel.min.js",
-              "src/assets/js/main.js",
-              "src/assets/mail/contact.js",
-              "src/assets/mail/jqBootstrapValidation.min.js",
-              "src/assets/js/khalti.js"
-            ]
+            "scripts": []
           }
         }
       }

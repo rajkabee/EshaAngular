@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
+import { PaymentComponent } from './payment/payment.component';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -36,7 +37,8 @@ import { CartStatusComponent } from './components/cart-status/cart-status.compon
      VendorsComponent,
      FooterComponent,
      CartDetailsComponent,
-     CartStatusComponent
+     CartStatusComponent,
+     PaymentComponent
   ],
   imports: [
     BrowserModule,
