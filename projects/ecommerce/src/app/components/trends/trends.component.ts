@@ -76,8 +76,8 @@ export class TrendsComponent implements OnInit{
       for(let i =0; i<this.noOfPages; i++){
         this.pages.push(i);
       }
-
     };
+
   }
 
   updatePageNo(newPage:number){

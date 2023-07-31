@@ -31,7 +31,7 @@
                             </div>
                         </td>
                         <td class="align-middle"><span>{{(item.unitPrice * item.quantity)|number : '1.0-0'  | currency }}</span></td>
-                        <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                        <td class="align-middle"><button (click)="removeItem(item.id)" class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
                     </tr>
                     
                 </tbody>
@@ -65,7 +65,7 @@
                         <h5 class="font-weight-bold">Total</h5>
                         <h5 class="font-weight-bold">$160</h5>
                     </div>
-                    <button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button>
+                    <a routerLink="/checkout"><button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button></a>
                 </div>
             </div>
         </div>

@@ -38,15 +38,15 @@ export class CartDetailsComponent implements OnInit{
 
   reduceQuantity(id:number){
     this.cartService.reduceQuantity(id);
-    this.cartService.observableItems.subscribe(
-      data=>this.items=data
-    );
+    this.listCartDetails();
   }
   increaseQuantity(id:number){
     this.cartService.increaseQuantity(id);
-    this.cartService.observableItems.subscribe(
-      data=>this.items=data
-    );
+    this.listCartDetails();
   }
 
+  removeItem(id:number){
+    this.cartService.removeItem(id);
+    this.listCartDetails();
+  }
 }

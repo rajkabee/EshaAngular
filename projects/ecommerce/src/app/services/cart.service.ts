@@ -53,8 +53,32 @@ export class CartService{
         item.quantity--;
       }
       else if(item.id==id && item.quantity==1){
-        this.items = this.items.filter(obj=>{return obj !== item;});
+        let index = this.items.indexOf(item);
+        this.items = this.items.filter((i)=>{
+          return item!==i;
+        });
+        
       }
+      console.log(this.items);
+      this.observableItems = of(this.items);
+      this.evaluateTotals();
+
+    });
+  }
+  removeItem(id:number){
+    this.items.forEach(item=>{
+     
+      if(item.id==id){
+        let index = this.items.indexOf(item);
+        this.items = this.items.filter((i)=>{
+          return item!==i;
+        });
+        
+      }
+      console.log(this.items);
+      this.observableItems = of(this.items);
+      this.evaluateTotals();
+
     });
   }
   increaseQuantity(id:number){
@@ -63,6 +87,8 @@ export class CartService{
         item.quantity++;
       }
     });
+    this.observableItems = of(this.items);
+    this.evaluateTotals();
   }
   
 

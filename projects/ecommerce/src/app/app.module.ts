@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
@@ -22,6 +22,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { PaymentComponent } from './payment/payment.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -38,14 +39,16 @@ import { PaymentComponent } from './payment/payment.component';
      FooterComponent,
      CartDetailsComponent,
      CartStatusComponent,
-     PaymentComponent
+     PaymentComponent,
+     CheckoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
